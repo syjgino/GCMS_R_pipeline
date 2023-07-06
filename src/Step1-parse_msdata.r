@@ -122,7 +122,8 @@ for (inputfile in inputfiles){
   filename=gsub(".xlsx","",filename)
   filepath=dirname(inputfile)
   isFA=grepl("fames",tolower(filename))
-  isChol=grepl("chol",tolower(inputfile))
+  #isChol=grepl("chol",tolower(inputfile))
+  isChol=grepl("chol",tolower(filename)) #gino update
   if (! (isFA || isChol)) {warning("error in filename! must contain FAMES or CHOL!"); next}
   setwd(filepath)
   output_xls=paste0("prep_",filename,".xls")
